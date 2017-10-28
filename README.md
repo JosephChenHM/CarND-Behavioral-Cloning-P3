@@ -13,6 +13,17 @@ The goals/steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./img/recovery_behavior.png "Flipped Image"
+[image2]: ./img/center.png "Center Driving"
+[image3]: ./img/recovery_behavior.png "Recovery Image"
+[image4]: ./img/flip_c.png "Fliped Image 1"
+[image5]: ./img/flip_l.png "Fliped Image 2"
+[image6]: ./img/flip_r.png "Fliped Image 3"
+[image7]: ./img/tran_center.png "Translated Image 1"
+[image8]: ./img/tran_left.png   "Translated Image 2"
+[image9]: ./img/tran_right.png  "Translated Image 3"
+[image10]: ./img/both_c.png "Result Image 1"
+[image11]: ./img/both_l.png "Result Image 2"
+[image12]: ./img/both_r.png "Result Image 3"
 
 ---
 ### Files Submitted & Code Quality
@@ -90,11 +101,11 @@ Here is a visualization of the architecture
 
 To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
 
-[image2]: ./img/center.png "Center Driving"
+![alt text][image2]
 
 I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to stay in the middle. These images show what a recovery looks like starting from the left side and right side :
 
-[image3]: ./img/recovery_behavior.png "Recovery Image"
+![alt text][image3]
 
 Then I repeated this process on track two in order to get more data points.
 
@@ -104,9 +115,9 @@ Then I repeated this process on track two in order to get more data points.
 
 To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
 
-[image4]: ./img/flip_c.png "Fliped Image 1"
-[image5]: ./img/flip_l.png "Fliped Image 2"
-[image6]: ./img/flip_r.png "Fliped Image 3"
+![alt text][image4]
+![alt text][image5]
+![alt text][image6]
 
 ##### Horizontal shifts
 
@@ -114,17 +125,17 @@ We shift the images horizontally to simulate the effect of the car being at diff
 
 After the collection process, I then preprocessed this data by adding the Cropping2D layer to remove redundant potion. It helps network more focus on road features instead of tree or sky.
 
-[image7]: ./img/tran_center.png "Translated Image 1"
-[image8]: ./img/tran_left.png   "Translated Image 2"
-[image9]: ./img/tran_right.png  "Translated Image 3"
+![alt text][image7]
+![alt text][image8]
+![alt text][image9]
 
 ##### Preprocessing Result
 
 After applying filpped and horizontal shift, following images are what it look like.
 
-[image10]: ./img/both_c.png "Result Image 1"
-[image11]: ./img/both_l.png "Result Image 2"
-[image12]: ./img/both_r.png "Result Image 3"
+![alt text][image10]
+![alt text][image11]
+![alt text][image12]
 
 ---
 
