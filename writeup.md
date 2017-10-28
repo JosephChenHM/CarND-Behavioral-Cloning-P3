@@ -12,13 +12,18 @@ The goals/steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/placeholder.png "Model Visualization"
-[image2]: ./examples/placeholder.png "Grayscaling"
-[image3]: ./examples/placeholder_small.png "Recovery Image"
-[image4]: ./examples/placeholder_small.png "Recovery Image"
-[image5]: ./examples/placeholder_small.png "Recovery Image"
-[image6]: ./examples/placeholder_small.png "Normal Image"
-[image7]: ./examples/placeholder_small.png "Flipped Image"
+[image1]: ./img/recovery_behavior.png "Flipped Image"
+[image2]: ./img/center.png "Center Driving"
+[image3]: ./img/recovery_behavior.png "Recovery Image"
+[image4]: ./img/flip_c.png "Fliped Image 1"
+[image5]: ./img/flip_l.png "Fliped Image 2"
+[image6]: ./img/flip_r.png "Fliped Image 3"
+[image7]: ./img/tran_center.png "Translated Image 1"
+[image8]: ./img/tran_left.png   "Translated Image 2"
+[image9]: ./img/tran_right.png  "Translated Image 3"
+[image10]: ./img/both_c.png "Result Image 1"
+[image11]: ./img/both_l.png "Result Image 2"
+[image12]: ./img/both_r.png "Result Image 3"
 
 ---
 ### Files Submitted & Code Quality
@@ -45,19 +50,19 @@ The model.py file contains the code for training and saving the convolution neur
 
 #### 1. An appropriate model architecture has been employed
 
-My model consists of a convolution neural network with 5x5 filter sizes and depths between 24 and 64 (model.py lines 21-56) 
+My model consists of a convolution neural network with 5x5 filter sizes and depths between 24 and 64 (model.py lines 19-51) 
 
 The model includes RELU layers to introduce nonlinearity, and the data is normalized in the model using a Keras lambda layer. Also, I add cropping layer to remove redundant portion of the image.
 
 #### 2. Attempts to reduce overfitting in the model
 
-The model contains dropout layers to reduce overfitting (model.py lines 30, 33, 36, 39, 41, 51). 
+The model contains dropout layers to reduce overfitting (model.py lines 26, 29, 32, 35, 38, 47). 
 
-The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 10-16). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 174-177). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
 #### 3. Model parameter tuning
 
-The model used an Adam optimizer, so the learning rate was not tuned manually (`model.py` line 25).
+The model used an Adam optimizer, so the learning rate was not tuned manually (`model.py` line 51).
 
 #### 4. Appropriate training data
 
@@ -86,7 +91,7 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 
 #### 2. Final Model Architecture
 
-The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and dropout layer to prevent overfitting.
+The final model architecture (model.py lines 19-49) consisted of a convolution neural network with the following layers and dropout layer to prevent overfitting.
 
 Here is a visualization of the architecture
 
@@ -101,8 +106,6 @@ To capture good driving behavior, I first recorded two laps on track one using c
 I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to stay in the middle. These images show what a recovery looks like starting from the left side and right side :
 
 ![alt text][image3]
-![alt text][image4]
-![alt text][image5]
 
 Then I repeated this process on track two in order to get more data points.
 
@@ -112,14 +115,29 @@ Then I repeated this process on track two in order to get more data points.
 
 To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
 
+![alt text][image4]
+![alt text][image5]
 ![alt text][image6]
-![alt text][image7]
 
 ##### Horizontal shifts
 
 We shift the images horizontally to simulate the effect of the car being at different positions on the road and add an offset corresponding to the shift to the steering angle. 
 
 After the collection process, I then preprocessed this data by adding the Cropping2D layer to remove redundant potion. It helps network more focus on road features instead of tree or sky.
+
+![alt text][image7]
+![alt text][image8]
+![alt text][image9]
+
+##### Preprocessing Result
+
+After applying filpped and horizontal shift, following images are what it look like.
+
+![alt text][image10]
+![alt text][image11]
+![alt text][image12]
+
+---
 
 I finally randomly shuffled the dataset and put 20% of the data into a validation set. 
 
