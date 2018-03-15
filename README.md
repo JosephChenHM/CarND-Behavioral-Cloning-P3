@@ -137,6 +137,9 @@ After applying filpped and horizontal shift, following images are what it look l
 ![alt text][image11]
 ![alt text][image12]
 
+#### 5. Result
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/qABSiW_7aGo/0.jpg)](https://www.youtube.com/watch?v=qABSiW_7aGo)
 ---
 
 I finally randomly shuffled the dataset and put 20% of the data into a validation set. 
